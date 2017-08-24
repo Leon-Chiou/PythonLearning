@@ -1,4 +1,2 @@
-
-import clr
-import clr
-
+# test001 
+print('finally use git')
