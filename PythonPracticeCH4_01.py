@@ -1,3 +1,6 @@
+
+import nester
+
 man=[]
 other=[]
 
@@ -20,7 +23,9 @@ data.close()
 
 try:
     with open('man_data.txt','w') as man_file, open('other_data.txt','w') as other_file:
-        print(man,file=man_file)
-        print(other,file=other_file)
+        nester.print_lol(man,outfile=man_file)
+        nester.print_lol(other,outfile=other_file)
 except:
     pass
+
+print("DONE!!")
