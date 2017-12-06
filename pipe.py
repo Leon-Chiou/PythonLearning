@@ -27,17 +27,17 @@ SecondPoint = IN[1]
 pipetype = UnwrapElement(IN[2])
 systemtype = UnwrapElement(IN[3])
 level = UnwrapElement(IN[4])
-doc = IN[5]
+doc = DocumentManager.Instance.CurrentDBDocument
 
 LevelId = level.Id
 elements = []
 
-TransactionManager.Instance.EnsureInTrasaction(doc)
+TransactionManager.Instance.EnsureInTransaction(doc)
 
 for i,x in enumerate(FirstPoint):
     pipe = Autodesk.Revit.DB.Plumbing.Pipe.Create(doc, systemtype.Id, pipetype.Id, LevelId, FirstPoint[i].ToXyz(), SecondPoint[i].ToXyz())
     elements.append(pipe.Id)
 
-TransactionManager.Instance.trasactionTaskDone()
+TransactionManager.Instance.TransactionTaskDone()
 
 OUT = elements
