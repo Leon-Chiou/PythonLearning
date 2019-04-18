@@ -1,8 +1,8 @@
 import clr
+from Autodesk.DesignScript.Geometry import* 
 clr.AddReference('ProtoGeometry')
-from Autodesk.DesignScript.Geometry import*
 
-#Import DocumentManager
+# Import DocumentManager
 clr.AddReference("RevitServices")
 import RevitServices
 from RevitServices.Persistence import DocumentManager
